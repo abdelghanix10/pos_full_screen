@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="pos_full_screen.Navbar" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
         <xpath expr="//Input[@placeholder.translate='Search products...']" position="after">
-            <button class="btn btn-light btn-lg lh-lg" t-on-click="toggleFullScreen" title="Toggle Full Screen" style="margin-right: 4px;">
-                <i class="fa fa-fw fa-lg" t-att-class="fullScreenState.isFullScreen ? 'fa-compress' : 'fa-arrows-alt'"/>
+            <button t-if="this.showFullScreenButton"
+                    class="btn btn-light btn-lg lh-lg d-flex align-items-center justify-content-center"
+                    t-on-click="() => this.toggleFullScreen()"
+                    title="Toggle Full Screen (Alt+F / F11)"
+                    style="margin-right: 4px;">
+                <i class="oi fs-4"
+                   t-att-data-icon="this.fullScreenState.isFullScreen ? 'fullscreen_exit' : 'fullscreen'"/>
             </button>
         </xpath>
     </t>

@@ -1,12 +1,22 @@
-# -*- coding: utf-8 -*-
 {
-    'name': 'POS Full Screen Button',
-    'version': '19.0.1.0.0',
-    'category': 'Point of Sale',
-    'summary': 'Add a full screen button to the POS navbar next to the search bar',
-    'description': 'This module adds a button in the POS header to easily toggle full screen mode.',
+    'name': 'POS Full Screen Button & Wake Lock',
+    'version': '20.0.2.0.0',
+    'category': 'Sales/Point of Sale',
+    'summary': 'Add a full screen toggle button, auto-fullscreen, and screen wake lock to POS',
+    'description': """
+POS Full Screen Button & Wake Lock (Odoo 20)
+============================================
+Enhances the Point of Sale interface with:
+- One-click Full Screen toggle button in the POS header (using Odoo 20 Material Symbols).
+- Optional Auto-Fullscreen mode on first tap/interaction.
+- Screen Wake Lock support to prevent tablet/touchscreen POS terminals from sleeping.
+- Keyboard shortcut (Alt + F / F11) support.
+    """,
     'author': 'Custom',
     'depends': ['point_of_sale'],
+    'data': [
+        'views/pos_config_views.xml',
+    ],
     'assets': {
         'point_of_sale._assets_pos': [
             'pos_full_screen/static/src/js/navbar_patch.js',

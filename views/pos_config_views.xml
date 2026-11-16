@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- POS Config Form View -->
+    <record id="pos_config_view_form_inherit_full_screen" model="ir.ui.view">
+        <field name="name">pos.config.form.view.inherit.full.screen</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='title']" position="after">
+                <div class="row mt16 o_settings_container">
+                    <setting string="Full Screen &amp; Display Wake Lock"
+                             help="Configure Full Screen button, Auto-Fullscreen, and Screen Wake Lock">
+                        <field name="iface_show_fullscreen_btn"/>
+                        <div class="content-group mt16">
+                            <div class="row">
+                                <label for="iface_auto_fullscreen" class="col-lg-6 o_light_label"/>
+                                <field name="iface_auto_fullscreen"/>
+                            </div>
+                            <div class="row">
+                                <label for="iface_keep_screen_awake" class="col-lg-6 o_light_label"/>
+                                <field name="iface_keep_screen_awake"/>
+                            </div>
+                        </div>
+                    </setting>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- POS Global Settings View (Point of Sale -> Configuration -> Settings) -->
+    <record id="res_config_settings_view_form_inherit_full_screen" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.full.screen</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_interface_section']" position="inside">
+                <setting string="Full Screen &amp; Display Wake Lock"
+                         help="Configure Full Screen button, Auto-Fullscreen, and Screen Wake Lock">
+                    <field name="pos_iface_show_fullscreen_btn"/>
+                    <div class="content-group mt16">
+                        <div class="row">
+                            <label for="pos_iface_auto_fullscreen" class="col-lg-6 o_light_label"/>
+                            <field name="pos_iface_auto_fullscreen"/>
+                        </div>
+                        <div class="row">
+                            <label for="pos_iface_keep_screen_awake" class="col-lg-6 o_light_label"/>
+                            <field name="pos_iface_keep_screen_awake"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
